@@ -79,6 +79,29 @@
         seconds.innerHTML = secondsRemaining;
         }
 
+         /*
+        Steps:
+        1. Obtain time from Destination Date
+        2. Obtain Current Time
+        3. Subtract them. You will get time in milliseconds.
+        4. Divide this difference by 1000 to get result in seconds. Call this diffInSeconds.
+        5. Refer Calculation.
+        6. Make timer work using setInterval and pass Function Name and Time Interval in milliseconds
+    */    
+
+    /*
+        CALCULATION
+        1 Day = 24*60*60 seconds = 86400 seconds
+        1 Hour = 60*60 seconds = 3600 seconds
+        1 Minute = 60 seconds
+        So, 
+        'X' seconds in days --->  X/86400 days
+            'A' Days and digits after decimal indicate hours
+        'Y' seconds in hours ---> Y/3600 hours       
+            'B' Days and digits after decimal indicate minutes
+        'Z' seconds in minutes ---> Z/60 minutes      
+    */
+        
     </script>
 </body>
 </html>
