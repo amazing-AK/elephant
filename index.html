@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            background-color: black;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            color: #03A9F4;
+            width: 9rem;
+            text-align: center;
+            margin: 0 1rem;
+        }
+        .jar {
+            font-size: 3rem;
+            padding: 2rem;
+        }
+        .text {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="jar" id="days">00</div>
+        <div class="text">DAYS</div>
+    </div>
+
+    <div class="container">
+        <div class="jar" id="hours">00</div>
+        <div class="text">HOURS</div>
+    </div>
+
+    <div class="container">
+        <div class="jar" id="minutes">00</div>
+        <div class="text">MINUTES</div>
+    </div>
+
+    <div class="container">
+        <div class="jar" id="seconds">00</div>
+        <div class="text">SECONDS</div>
+    </div>
+
+    <script>
+
+        // Start Countdown Timer(Pass Function Name and Time Interval in milliseconds)
+        setInterval (showTime,1000);
+
+        function showTime() {
+
+        // 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order):
+        // Month begins from 0. Dec = 11.
+        const newYearTime = new Date(2021, 0 , 1, 0, 0, 0, 0);
+        var currentTime = new Date();
+
+        var difference = newYearTime - currentTime;
+
+        // Converting time in milliseconds to seconds
+        var diffInSeconds =Math.floor(difference/1000);
+
+        var daysRemaining = Math.floor(diffInSeconds/86400);
+        days.innerHTML = daysRemaining;
+
+        var hoursRemaining = Math.floor((diffInSeconds%86400)/3600);
+        hours.innerHTML = hoursRemaining;
+
+        var minutesRemaining = Math.floor(((diffInSeconds%86400)%3600)/60);
+        minutes.innerHTML = minutesRemaining;
+
+        var secondsRemaining = Math.floor(((diffInSeconds%86400)%3600)%60);
+        seconds.innerHTML = secondsRemaining;
+        }
+
+    </script>
+</body>
+</html>
