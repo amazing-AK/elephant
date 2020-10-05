@@ -25,10 +25,23 @@
         .text {
             font-size: 1.2rem;
         }
+
+        .title{
+            color: #03A9F4;
+            text-align: center;
+            margin: 0 1rem;
+            position: absolute;
+            top: 100px; 
+        }
+        
     </style>
 </head>
 <body>
 
+    <header class="title">
+        <h1>Time till this year DIES</h1>
+    </header>
+    
     <div class="container">
         <div class="jar" id="days">00</div>
         <div class="text">DAYS</div>
@@ -48,7 +61,7 @@
         <div class="jar" id="seconds">00</div>
         <div class="text">SECONDS</div>
     </div>
-
+    
     <script>
 
         // Start Countdown Timer(Pass Function Name and Time Interval in milliseconds)
@@ -58,8 +71,12 @@
 
         // 7 numbers specify year, month, day, hour, minute, second, and millisecond (in that order):
         // Month begins from 0. Dec = 11.
-        const newYearTime = new Date(2021, 0 , 1, 0, 0, 0, 0);
         var currentTime = new Date();
+
+        // Gets the new year dynamically 
+        var nextYear= currentTime.getFullYear() + 1;
+        const newYearTime = new Date(nextYear, 0 , 1, 0, 0, 0, 0);
+        
 
         var difference = newYearTime - currentTime;
 
